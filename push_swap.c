@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/05 17:00:16 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/06 18:54:17 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	int		i;
+	int	i;
 
 	i = 1;
 	if (argc > 1)
@@ -27,6 +27,8 @@ int	main(int argc, char **argv)
 				ft_errors("One of the arguments is not integer");
 			i++;
 		}
+		if (!ft_isdup(argv))
+			ft_errors("One of the arguments is duplicated");
 		ft_printf("All good\n");
 	}
 	else

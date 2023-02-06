@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/05 18:05:48 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/06 18:54:22 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ char	*ft_itoa(int n);
 /*	utils.c	*/
 int		ft_isdigit(char **str);
 int		ft_isint(char *str);
+int		ft_isdup(char **str);
 
 /*	errors.c	*/
 void	ft_errors(char *str);

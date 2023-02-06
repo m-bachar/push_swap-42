@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/05 18:06:11 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/06 18:54:00 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,26 @@ int	ft_isint(char *str)
 	nbr = ft_atoi(str);
 	if (*str2 == '+')
 		str2++;
-	str1 = ft_itoa(nbr); // Possible leaks here
+	str1 = ft_itoa(nbr);
 	if (nbr < INT_MIN
 		|| nbr > INT_MAX || !ft_strcmp(str1, str2))
-		return (0);
+		return (free(str1), 0);
+	return (free(str1), 1);
+}
+
+int	ft_isdup(char **str)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = i + 1;
+	while (str[j])
+	{
+		if (ft_strcmp(str[i], str[j]))
+			return (0);
+		i++;
+		j++;
+	}
 	return (1);
 }
