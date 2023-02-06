@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/02/06 18:03:39 by mbachar          ###   ########.fr        #
+#    Updated: 2023/02/06 21:30:40 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ CC			=	cc
 
 PRINTF		=	./ft_printf/libftprintf.a
 
-MAN_SRC 	= 	push_swap.c ./misc/errors.c ./misc/itoa_atoi.c ./misc/libft_utils.c ./misc/utils.c \
+LIBFT		=	./libft/libft.a
+
+MAN_SRC 	= 	push_swap.c ./misc/errors.c ./misc/libft_utils.c ./misc/utils.c ./misc/parsing.c \
 
 MAN_OBJ		=	$(MAN_SRC:.c=.o)
 
@@ -34,7 +36,7 @@ all: $(PUSH_SWAP) #$(CHECKER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(PUSH_SWAP): $(MAN_OBJ)
-	$(CC) $(CFLAGS) $(MAN_OBJ) -o $(PUSH_SWAP) $(PRINTF)
+	$(CC) $(CFLAGS) $(MAN_OBJ) -o $(PUSH_SWAP) $(PRINTF) $(LIBFT)
 
 clean:
 	rm -fr $(MAN_OBJ)
@@ -45,4 +47,3 @@ fclean: clean
 re: fclean all
 
 .PHONY: fclean clean
-

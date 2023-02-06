@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/17 11:49:11 by mbachar           #+#    #+#             */
+/*   Updated: 2022/11/14 20:11:02 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	system("leaks push_swap");
-}
+	size_t			i;
+	unsigned char	*str1;
+	unsigned char	*str2;
 
-int	main(int argc, char **argv)
-{
-	char	**splitted;
-	int		i;
-
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	str1 = (unsigned char *)s1;
+	str2 = (unsigned char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		if (str1[i] != str2[i])
+			return (str1[i] - str2[i]);
+		else
+			i++;
 	}
-	else
-		exit (0);
+	return (0);
 }

@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/08 17:16:27 by mbachar           #+#    #+#             */
+/*   Updated: 2022/10/12 11:04:32 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+char	*ft_strrchr(const char *s, int c)
 {
-	system("leaks push_swap");
-}
+	int	i;
 
-int	main(int argc, char **argv)
-{
-	char	**splitted;
-	int		i;
-
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		if (s[i] == (char) c)
+			return ((char *)(s) + i);
+		i--;
 	}
-	else
-		exit (0);
+	return (0);
 }

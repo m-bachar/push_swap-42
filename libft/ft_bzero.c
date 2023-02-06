@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/16 12:54:15 by mbachar           #+#    #+#             */
+/*   Updated: 2022/11/14 12:44:51 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+void	ft_bzero(void *s, size_t n)
 {
-	system("leaks push_swap");
-}
+	size_t		i;
+	char		*str;
 
-int	main(int argc, char **argv)
-{
-	char	**splitted;
-	int		i;
-
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	str = (char *)(s);
+	i = 0;
+	while (i < n)
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		str[i] = '\0';
+		i++;
 	}
-	else
-		exit (0);
 }

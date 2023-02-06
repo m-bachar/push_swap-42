@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/18 11:50:46 by mbachar           #+#    #+#             */
+/*   Updated: 2022/11/14 20:12:14 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	system("leaks push_swap");
-}
+	unsigned char	*str;
+	size_t			i;
 
-int	main(int argc, char **argv)
-{
-	char	**splitted;
-	int		i;
-
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	str = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		if (str[i] == (unsigned char) c)
+			return (str + i);
+		i++;
 	}
-	else
-		exit (0);
+	return (0);
 }

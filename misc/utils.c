@@ -6,13 +6,34 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 18:54:00 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/06 23:04:35 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int	ft_isdigit(char **str)
+char	**ft_single_arg(char **str)
+{
+	char	**splitted;
+	char	*joined;
+	int		i;
+	int		j;
+
+	i = 1;
+	j = 0;
+	joined = malloc(sizeof(char) * 1);
+	if (!joined)
+		return (free(joined), NULL);
+	while (str[i])
+	{
+		joined = ft_strjoin(joined, " ");
+		joined = ft_strjoin(joined, str[i++]);
+	}
+	splitted = ft_split(joined, ' ');
+	return (free(joined), splitted);
+}
+
+int	ft_isnumber(char **str)
 {
 	int	i;
 	int	j;
@@ -21,6 +42,10 @@ int	ft_isdigit(char **str)
 	j = 1;
 	while (str[j])
 	{
+		if (ft_strlen(str[j]) == 0)
+		{
+			ft_errors("One of the arguments is empty");
+		}
 		while (str[j][i])
 		{
 			if ((str[j][i] >= '0' && str[j][i] <= '9')

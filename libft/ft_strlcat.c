@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/11/06 08:36:02 by mbachar           #+#    #+#             */
+/*   Updated: 2022/11/12 10:59:13 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	system("leaks push_swap");
-}
-
-int	main(int argc, char **argv)
-{
-	char	**splitted;
 	int		i;
+	size_t	j;
+	int		output;
 
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
-	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
-	}
-	else
-		exit (0);
+	if (dest == 0 && n == 0)
+		return (ft_strlen(src));
+	output = (ft_strlen(src) + ft_strlen(dest));
+	if (((n - 1) < ft_strlen(dest)) || n == 0)
+		return (ft_strlen(src) + n);
+	j = ft_strlen(dest);
+	i = 0;
+	while (j < n - 1 && src[i])
+		dest[j++] = src[i++];
+	dest[j] = '\0';
+	return (output);
 }

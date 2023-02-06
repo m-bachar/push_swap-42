@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 18:54:22 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/06 22:50:28 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include "./ft_printf/ft_printf.h"
+# include "./libft/libft.h"
 
 typedef struct s_list
 {
@@ -25,23 +26,21 @@ typedef struct s_list
 }	t_list;
 
 /*	libft_utils.c	*/
-void	*ft_memcpy(void *dst, void *src, size_t n);
 int		ft_strcmp(char	*s1, char	*s2);
-size_t	ft_strlen(char *str);
-char	*ft_strdup(char *s1);
-
-/*	itoa_atoi.c	*/
-int		ft_atoi(char *str);
-char	*ft_itoa(int n);
 
 /*	utils.c	*/
-int		ft_isdigit(char **str);
+int		ft_isnumber(char **str);
 int		ft_isint(char *str);
 int		ft_isdup(char **str);
+char	**ft_single_arg(char **str);
 
 /*	errors.c	*/
 void	ft_errors(char *str);
+void	ft_success(char *str);
 void	reset(void);
 void	red(void);
+
+/*	parsing.c	*/
+void	ft_handle_errors(char **argv);
 
 #endif

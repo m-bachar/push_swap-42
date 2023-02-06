@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/25 21:37:57 by mbachar           #+#    #+#             */
+/*   Updated: 2023/02/06 22:35:05 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+char	*ft_strjoin(char *s1, char *s2)
 {
-	system("leaks push_swap");
-}
+	char		*new;
+	int			i;
+	int			j;
 
-int	main(int argc, char **argv)
-{
-	char	**splitted;
-	int		i;
-
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	if (!s2)
+		return (NULL);
+	if (!s1)
+		s1 = ft_strdup("");
+	i = 0;
+	j = 0;
+	new = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (!new)
+		return (NULL);
+	while (s1[i] != '\0')
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		new[i] = s1[i];
+		i++;
 	}
-	else
-		exit (0);
+	while (s2[j] != '\0')
+		new[i++] = s2[j++];
+	new[i] = '\0';
+	return (free(s1), new);
 }

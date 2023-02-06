@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/17 14:34:57 by mbachar           #+#    #+#             */
+/*   Updated: 2022/11/09 21:54:03 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+void	*ft_memmove(void *dest, const void *src, size_t len)
 {
-	system("leaks push_swap");
-}
-
-int	main(int argc, char **argv)
-{
-	char	**splitted;
+	char	*str1;
+	char	*str2;
 	int		i;
 
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	str1 = (char *) src;
+	str2 = (char *) dest;
+	i = (int) len;
+	if (dest > src)
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		i--;
+		while (i >= 0)
+		{
+			str2[i] = str1[i];
+			i--;
+		}
 	}
 	else
-		exit (0);
+		ft_memcpy(dest, src, len);
+	return (dest);
 }

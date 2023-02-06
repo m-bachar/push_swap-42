@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:14 by mbachar          ###   ########.fr       */
+/*   Created: 2022/10/23 22:03:26 by mbachar           #+#    #+#             */
+/*   Updated: 2022/11/08 02:50:06 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	fun(void)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	system("leaks push_swap");
-}
+	size_t	i;
+	size_t	j;
 
-int	main(int argc, char **argv)
-{
-	char	**splitted;
-	int		i;
-
-	i = 1;
-	// atexit(fun);
-	if (argc > 1)
+	i = 0;
+	j = ft_strlen(src);
+	if (dstsize == 0)
+		return (j);
+	while (i < dstsize - 1 && src[i] != '\0')
 	{
-		splitted = ft_single_arg(argv);
-		ft_handle_errors(splitted);
+		dst[i] = src[i];
+		i++;
 	}
-	else
-		exit (0);
+	if (i < dstsize)
+		dst[i] = '\0';
+	while (src[i] != '\0')
+		i++;
+	return (i);
 }

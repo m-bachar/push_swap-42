@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:06:05 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/05 18:39:35 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/06 19:08:50 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	red(void)
 	ft_printf("\033[1;31m");
 }
 
+void	green(void)
+{
+	ft_printf("\033[1;32m");
+}
+
 void	reset(void)
 {
 	ft_printf("\033[0m");
@@ -25,7 +30,16 @@ void	reset(void)
 void	ft_errors(char *str)
 {
 	red();
-	ft_printf("Error : ");
+	ft_printf("Error\t: ");
+	reset();
+	ft_printf("%s !\n", str);
+	exit (0);
+}
+
+void	ft_success(char *str)
+{
+	green();
+	ft_printf("Success : ");
 	reset();
 	ft_printf("%s !\n", str);
 	exit (0);
