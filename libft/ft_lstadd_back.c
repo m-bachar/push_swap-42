@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 16:06:05 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/15 16:24:23 by mbachar          ###   ########.fr       */
+/*   Created: 2022/12/26 16:42:46 by mbachar           #+#    #+#             */
+/*   Updated: 2023/01/01 09:30:49 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	red(void)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	ft_printf("\033[1;31m");
-}
+	t_list	*last;
 
-void	green(void)
-{
-	ft_printf("\033[1;32m");
-}
-
-void	reset(void)
-{
-	ft_printf("\033[0m");
-}
-
-void	ft_errors(char *str)
-{
-	red();
-	ft_printf("Error\t: ");
-	reset();
-	ft_printf("%s !\n", str);
-	exit (0);
-}
-
-void	ft_success(char *str)
-{
-	green();
-	ft_printf("Success : ");
-	reset();
-	ft_printf("%s !\n", str);
-	exit (0);
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last = *lst;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = new;
 }

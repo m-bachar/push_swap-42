@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:10:24 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 19:35:13 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/08 12:22:16 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_handle_errors(char **argv)
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	if (!ft_isnumber(argv))
 		ft_errors("One of the arguments contain a non-digit character");
 	while (argv[i])

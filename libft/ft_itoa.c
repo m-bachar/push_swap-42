@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 22:38:00 by mbachar           #+#    #+#             */
-/*   Updated: 2022/11/15 22:49:40 by mbachar          ###   ########.fr       */
+/*   Updated: 2022/12/22 22:25:17 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static	int	number_len(int nbr)
 
 char	*ft_itoa(int n)
 {
+	char	*number;
 	int		i;
-	char	*itoa;
 	int		j;
 
 	if (!n)
@@ -42,19 +42,19 @@ char	*ft_itoa(int n)
 		return (ft_strdup("-2147483648"));
 	i = number_len(n);
 	j = 0;
-	itoa = malloc((i) * sizeof(char) + 1);
-	if (!itoa)
+	number = malloc((i) * sizeof(char) + 1);
+	if (!number)
 		return (NULL);
 	if (n < 0)
 	{
-		itoa[j++] = '-';
+		number[j++] = '-';
 		n *= -1;
 	}
-	itoa[i] = '\0';
+	number[i] = '\0';
 	while (i-- > j)
 	{
-		itoa[i] = (n % 10) + 48;
+		number[i] = (n % 10) + 48;
 		n /= 10;
 	}
-	return (itoa);
+	return (number);
 }

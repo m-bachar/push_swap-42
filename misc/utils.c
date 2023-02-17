@@ -6,11 +6,39 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/06 23:04:35 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/08 18:16:01 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	ft_isempty(char **str)
+{
+	int	i;
+	int	j;
+	int	count;
+
+	i = 0;
+	j = 1;
+	count = 0;
+	while (str[j])
+	{
+		if (ft_strlen(str[j]) == 0)
+			return (0);
+		while (str[j][i])
+		{
+			if (str[j][i] == ' ' || str[j][i] == '\t')
+				count++;
+			i++;
+		}
+		if (count == (int)ft_strlen(str[j]))
+			return (0);
+		i = 0;
+		count = 0;
+		j++;
+	}
+	return (1);
+}
 
 char	**ft_single_arg(char **str)
 {
@@ -39,13 +67,9 @@ int	ft_isnumber(char **str)
 	int	j;
 
 	i = 0;
-	j = 1;
+	j = 0;
 	while (str[j])
 	{
-		if (ft_strlen(str[j]) == 0)
-		{
-			ft_errors("One of the arguments is empty");
-		}
 		while (str[j][i])
 		{
 			if ((str[j][i] >= '0' && str[j][i] <= '9')
@@ -84,14 +108,18 @@ int	ft_isdup(char **str)
 	int	i;
 	int	j;
 
-	i = 1;
-	j = i + 1;
+	i = 0;
+	j = 0;
 	while (str[j])
 	{
-		if (ft_strcmp(str[i], str[j]))
+		if (ft_atoi(str[i]) == ft_atoi(str[j]) && i != j)
 			return (0);
 		i++;
-		j++;
+		if (!str[i] && str[j])
+		{
+			i = 0;
+			j++;
+		}
 	}
 	return (1);
 }

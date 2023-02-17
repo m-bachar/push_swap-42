@@ -1,46 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   errors.c                                           :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/05 16:06:05 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/15 16:24:23 by mbachar          ###   ########.fr       */
+/*   Created: 2022/12/26 16:43:06 by mbachar           #+#    #+#             */
+/*   Updated: 2022/12/31 23:47:45 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	red(void)
+t_list	*ft_lstnew(void *content)
 {
-	ft_printf("\033[1;31m");
-}
+	t_list	*node;
 
-void	green(void)
-{
-	ft_printf("\033[1;32m");
-}
-
-void	reset(void)
-{
-	ft_printf("\033[0m");
-}
-
-void	ft_errors(char *str)
-{
-	red();
-	ft_printf("Error\t: ");
-	reset();
-	ft_printf("%s !\n", str);
-	exit (0);
-}
-
-void	ft_success(char *str)
-{
-	green();
-	ft_printf("Success : ");
-	reset();
-	ft_printf("%s !\n", str);
-	exit (0);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }
