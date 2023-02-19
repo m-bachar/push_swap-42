@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/08 18:16:01 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/18 17:34:18 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,18 +108,17 @@ int	ft_isdup(char **str)
 	int	i;
 	int	j;
 
-	i = 0;
 	j = 0;
 	while (str[j])
 	{
-		if (ft_atoi(str[i]) == ft_atoi(str[j]) && i != j)
-			return (0);
-		i++;
-		if (!str[i] && str[j])
+		i = 0;
+		while (str[i])
 		{
-			i = 0;
-			j++;
+			if (ft_atoi(str[i]) == ft_atoi(str[j]) && i != j)
+				return (0);
+			i++;
 		}
+		j++;
 	}
 	return (1);
 }
