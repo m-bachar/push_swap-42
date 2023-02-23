@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/02/06 21:30:40 by mbachar          ###   ########.fr        #
+#    Updated: 2023/02/23 09:09:06 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,17 +33,27 @@ MAN_OBJ		=	$(MAN_SRC:.c=.o)
 all: $(PUSH_SWAP) #$(CHECKER)
 
 %.o : %.c $(INC)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) -c $< -o $@
 
 $(PUSH_SWAP): $(MAN_OBJ)
-	$(CC) $(CFLAGS) $(MAN_OBJ) -o $(PUSH_SWAP) $(PRINTF) $(LIBFT)
+	@ $(CC) $(CFLAGS) $(MAN_OBJ) -o $(PUSH_SWAP) $(PRINTF) $(LIBFT)
+	@ printf "===============================================\n"
+	@ printf "All mandatory source files have been compiled.\n"
+	@ printf "Executable file push_swap has been generated.\n"
+	@ printf "===============================================\n"
 
 clean:
-	rm -fr $(MAN_OBJ)
+	@ rm -fr $(MAN_OBJ)
+	@ printf "===============================================\n"
+	@ printf "All object files have been destroyed.\n"
+	@ printf "===============================================\n"
 
-fclean: clean
-	rm -fr $(PUSH_SWAP)
+fclean:
+	@ rm -fr $(PUSH_SWAP) $(MAN_OBJ)
+	@ printf "=========================================================\n"
+	@ printf "All object files and executable file have been destroyed.\n"
+	@ printf "==========================================================\n"
 
 re: fclean all
 
-.PHONY: fclean clean
+.PHONY: fclean clean re bonus
