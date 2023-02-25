@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 19:10:24 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/08 12:22:16 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/24 18:07:02 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	ft_handle_errors(char **argv)
 	if (!ft_isdup(argv))
 		ft_errors("One of the arguments is duplicated");
 	ft_success("All good");
+	i = 0;
 }

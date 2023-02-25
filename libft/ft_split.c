@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/30 03:03:21 by mbachar           #+#    #+#             */
-/*   Updated: 2022/12/22 22:24:36 by mbachar          ###   ########.fr       */
+/*   Updated: 2022/11/15 23:51:42 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ static char	**free_mem(char **mem)
 
 char	**ft_split(char const *s, char c)
 {
-	char		**split;
 	size_t		word_len;
+	char		**split;
 	size_t		i;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	split = malloc((words_counter(s, c) + 1) * sizeof(*split));
+	split = (char **)malloc((words_counter(s, c) + 1) * sizeof(*split));
 	if (!split)
 		return (NULL);
 	while (*s != '\0')
