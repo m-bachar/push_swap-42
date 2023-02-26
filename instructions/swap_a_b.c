@@ -6,10 +6,15 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 20:43:48 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/09 20:44:21 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/26 21:11:30 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	sa()
+void	swap_a(t_list *lst)
+{
+	if (ft_lstsize(lst) == 1)
+		exit (0);
+	
+}

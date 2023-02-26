@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/26 17:21:51 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/26 21:20:49 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	leaks(void)
 	system("leaks push_swap");
 }
 
+
 int	main(int argc, char **argv)
 {
 	char	**splitted;
@@ -24,7 +25,7 @@ int	main(int argc, char **argv)
 	int		size;
 	int		i;
 
-	atexit(leaks);
+	// atexit(leaks);
 	if (argc > 1)
 	{
 		if (!ft_isempty(argv))
@@ -37,13 +38,15 @@ int	main(int argc, char **argv)
 		i = 0;
 		while (i < size)
 			ft_lstadd_back(&lst, ft_lstnew(ft_atoi(splitted[i++])));
+		// help_fun(lst, argv);
 		i = 0;
 		while (i < size)
 		{
-			printf("%d\n", lst->content);
+			printf("%d ", lst->content);
 			lst = lst->next;
 			i++;
 		}
+		printf("\nSize of the list = %d\n", ft_lstsize(lst));
 		free_all(lst, splitted, size);
 	}
 	else
