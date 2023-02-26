@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:06:05 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/25 20:07:34 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/26 16:59:52 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,4 @@ void	ft_success(char *str)
 	ft_printf("Success : ");
 	reset();
 	ft_printf("%s !\n", str);
-	// exit (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/25 20:10:57 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/26 16:52:49 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ typedef struct s_list
 	struct s_list	*prev;
 }	t_list;
 
-/* stock_print */
+/* free_all.c */
+void	free_all(t_list *lst, char **argv, int size);
+
+/* lst.c */
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 

@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/25 14:11:46 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/26 17:25:49 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,13 @@ char	**ft_single_arg(char **str)
 		return (free(joined), NULL);
 	while (str[i])
 	{
+		free(joined);
 		joined = ft_strjoin(joined, " ");
+		free(joined);
 		joined = ft_strjoin(joined, str[i++]);
 	}
 	splitted = ft_split(joined, ' ');
+	i = 0;
 	return (free(joined), splitted);
 }
 
