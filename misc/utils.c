@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/26 17:25:49 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/27 15:37:06 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,8 @@ char	**ft_single_arg(char **str)
 	char	**splitted;
 	char	*joined;
 	int		i;
-	int		j;
 
 	i = 1;
-	j = 0;
 	joined = malloc(sizeof(char) * 1);
 	if (!joined)
 		return (free(joined), NULL);
@@ -92,9 +90,7 @@ int	ft_isint(char *str)
 	char	*str1;
 	char	*str2;
 	int		nbr;
-	int		i;
 
-	i = 0;
 	str2 = str;
 	nbr = ft_atoi(str);
 	if (*str2 == '+')

@@ -48,7 +48,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 int	ft_lstsize(t_list *lst)
 {
 	t_list	*ptr;
-	int		i;
+	int			i;
 
 	i = 1;
 	if (lst == NULL)
@@ -62,7 +62,7 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
-void	ft_lstadd_front(t_list **lst, t_list *new) // TBE
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	t_list	*first;
 

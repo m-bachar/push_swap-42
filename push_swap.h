@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/26 20:56:36 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/27 19:43:18 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,10 @@ void	red(void);
 
 /*	parsing.c	*/
 void	ft_handle_errors(char **argv);
+
+/* swap.c */
+void	sa(t_list *lst);
+void	sb(t_list *lst);
+void	ss(t_list *lst_a, t_list *lst_b);
 
 #endif

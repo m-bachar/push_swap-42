@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/26 21:20:49 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/27 19:41:03 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,13 @@ void	leaks(void)
 	system("leaks push_swap");
 }
 
-
 int	main(int argc, char **argv)
 {
-	char	**splitted;
-	t_list	*lst;
-	int		size;
-	int		i;
+	char		**splitted;
+	t_list		*lst_a;
+	int			size;
+	int			i;
 
-	// atexit(leaks);
 	if (argc > 1)
 	{
 		if (!ft_isempty(argv))
@@ -37,17 +35,27 @@ int	main(int argc, char **argv)
 			size++;
 		i = 0;
 		while (i < size)
-			ft_lstadd_back(&lst, ft_lstnew(ft_atoi(splitted[i++])));
-		// help_fun(lst, argv);
+			ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(splitted[i++])));
 		i = 0;
+		printf("\n============= Before SA ==================\n");
 		while (i < size)
 		{
-			printf("%d ", lst->content);
-			lst = lst->next;
+			printf("%d ", lst_a->content);
+			lst_a = lst_a->next;
 			i++;
 		}
-		printf("\nSize of the list = %d\n", ft_lstsize(lst));
-		free_all(lst, splitted, size);
+		printf("\n===========================================\n");
+		sa(lst_a);
+		i = 0;
+		printf("\n============= After SA ====================\n");
+		while (i < size)
+		{
+			printf("%d ", lst_a->content);
+			lst_a = lst_a->next;
+			i++;
+		}
+		printf("\n===========================================\n\n");
+		free_all(lst_a, splitted, size);
 	}
 	else
 		exit (0);
