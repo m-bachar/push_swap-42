@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/27 19:43:18 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/28 10:56:41 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,15 @@ void	ft_handle_errors(char **argv);
 void	sa(t_list *lst);
 void	sb(t_list *lst);
 void	ss(t_list *lst_a, t_list *lst_b);
+
+/* rotate.c */
+void	ra(t_list *lst);
+void	rb(t_list *lst);
+void	rr(t_list *lst_a, t_list *lst_b);
+
+/* reverse_rotate.c */
+void	rra(t_list *lst);
+void	rrb(t_list *lst);
+void	rrr(t_list *lst_a, t_list *lst_b);
 
 #endif

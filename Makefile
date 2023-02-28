@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/02/27 18:35:48 by mbachar          ###   ########.fr        #
+#    Updated: 2023/02/28 10:54:03 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,16 @@ PRINTF		=	./ft_printf/libftprintf.a
 
 LIBFT		=	./libft/libft.a
 
-MAN_SRC 	= 	push_swap.c ./misc/errors.c ./misc/libft_utils.c ./misc/utils.c ./misc/parsing.c ./misc/lst.c ./misc/free_all.c ./instructions/swap.c \
+MAN_SRC 	= 	push_swap.c \
+				misc/errors.c \
+				misc/libft_utils.c \
+				misc/utils.c \
+				misc/parsing.c \
+				misc/lst.c \
+				misc/free_all.c \
+				instructions/swap.c \
+				instructions/rotate.c \
+				instructions/reverse_rotate.c
 
 MAN_OBJ		=	$(MAN_SRC:.c=.o)
 
