@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/28 10:56:01 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/28 11:09:53 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 		i = 0;
 		while (i < size)
 			ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(splitted[i++])));
-		rra(lst_a);
+		rra(lst_a, 1);
 		free_all(lst_a, splitted, size);
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/28 10:56:41 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/02/28 11:08:39 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,18 @@ void	red(void);
 void	ft_handle_errors(char **argv);
 
 /* swap.c */
-void	sa(t_list *lst);
-void	sb(t_list *lst);
+void	sa(t_list *lst, int i);
+void	sb(t_list *lst, int i);
 void	ss(t_list *lst_a, t_list *lst_b);
 
 /* rotate.c */
-void	ra(t_list *lst);
-void	rb(t_list *lst);
+void	ra(t_list *lst, int i);
+void	rb(t_list *lst, int i);
 void	rr(t_list *lst_a, t_list *lst_b);
 
 /* reverse_rotate.c */
-void	rra(t_list *lst);
-void	rrb(t_list *lst);
+void	rra(t_list *lst, int i);
+void	rrb(t_list *lst, int i);
 void	rrr(t_list *lst_a, t_list *lst_b);
 
 #endif
