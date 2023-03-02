@@ -62,16 +62,7 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
-void	ft_lstadd_front(t_list **lst, t_list *new) // TBE
-{
-	t_list	*first;
-
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
-	first = *lst;
-	new->next = first;
-	*lst = new;
-}
+// void	ft_lstadd_front(t_list **lst, t_list *new)
+// {
+	
+// }

@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/02/28 10:54:03 by mbachar          ###   ########.fr        #
+#    Updated: 2023/02/28 22:43:30 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ MAN_SRC 	= 	push_swap.c \
 				misc/free_all.c \
 				instructions/swap.c \
 				instructions/rotate.c \
-				instructions/reverse_rotate.c
+				instructions/reverse_rotate.c \
+				instructions/push.c
 
 MAN_OBJ		=	$(MAN_SRC:.c=.o)
 
