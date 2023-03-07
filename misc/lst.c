@@ -27,22 +27,22 @@ t_list	*ft_lstnew(int content)
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list	*temp;
-	t_list	*head;
+	t_list	*last;
+	t_list	*first;
 
 	if (*lst == NULL)
 	{
 		*lst = new;
 		return ;
 	}
-	temp = *lst;
-	head = *lst;
-	while (temp->next != *lst)
-		temp = temp->next;
-	temp->next = new;
+	last = *lst;
+	first = *lst;
+	while (last->next != *lst)
+		last = last->next;
+	last->next = new;
 	new->next = *lst;
-	new->prev = temp;
-	head->prev = new;
+	new->prev = last;
+	first->prev = new;
 }
 
 int	ft_lstsize(t_list *lst)
@@ -62,7 +62,23 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
-// void	ft_lstadd_front(t_list **lst, t_list *new)
-// {
-	
-// }
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	t_list	*first;
+	t_list	*last;
+
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	first = *lst;
+	last = *lst;
+	while (last->next != *lst)
+		last = last->next;
+	new->next = first;
+	new->prev = last;
+	last->next = new;
+	first->prev = new;
+	*lst = new;
+}

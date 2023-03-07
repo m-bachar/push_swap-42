@@ -6,26 +6,22 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/02 15:16:16 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/06 11:05:08 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	leaks(void)
-{
-	system("leaks push_swap");
-}
 
 int	main(int argc, char **argv)
 {
 	char		**splitted;
 	t_list		*lst_a;
 	t_list		*lst_b;
+	t_list		*head;
 	int			size;
 	int			i;
 
-	// atexit(leaks);
+	lst_b = NULL;
 	if (argc > 1)
 	{
 		if (!ft_isempty(argv))
@@ -38,11 +34,18 @@ int	main(int argc, char **argv)
 		i = 0;
 		while (i < size)
 			ft_lstadd_back(&lst_a, ft_lstnew(ft_atoi(splitted[i++])));
-		i = 0;
-		while (i < size)
-			ft_lstadd_back(&lst_b, ft_lstnew(ft_atoi(splitted[i++])));
-		pa(lst_a, lst_b);
-		free_all(lst_a, splitted, size);
+		pb(&lst_a, &lst_b);
+		pb(&lst_a, &lst_b);
+		rrb(&lst_b, 0);
+		head = lst_b;
+		while (head)
+		{
+			printf("%d\n", head->content);
+			head = head->next;
+			if (head == lst_b)
+				break ;
+		}
+		// free_all(lst_a, splitted, size);
 	}
 	else
 		exit (0);

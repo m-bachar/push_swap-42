@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/02 15:15:52 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/06 11:01:43 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	free_all(t_list *lst_a, char **argv, int size_a);
 t_list	*ft_lstnew(int content);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 int		ft_lstsize(t_list *lst);
-// void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 /*	libft_utils.c	*/
 int		ft_strcmp(char	*s1, char	*s2);
@@ -61,16 +61,17 @@ void	sb(t_list *lst, int status);
 void	ss(t_list *lst_a, t_list *lst_b, int status);
 
 /* rotate.c */
-void	ra(t_list *lst, int status);
-void	rb(t_list *lst, int status);
-void	rr(t_list *lst_a, t_list *lst_b, int status);
+void	ra(t_list **lst, int status);
+void	rb(t_list **lst, int status);
+void	rr(t_list **lst_a, t_list **lst_b, int status);
 
 /* reverse_rotate.c */
-void	rra(t_list *lst, int status);
-void	rrb(t_list *lst, int status);
-void	rrr(t_list *lst_a, t_list *lst_b, int status);
+void	rra(t_list **lst, int status);
+void	rrb(t_list **lst, int status);
+void	rrr(t_list **lst_a, t_list **lst_b, int status);
 
 /* push.c */
-void	pa(t_list *lst_a, t_list *lst_b);
+void	pa(t_list **lst_a, t_list **lst_b);
+void	pb(t_list **lst_a, t_list **lst_b);
 
 #endif
