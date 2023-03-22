@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 08:42:42 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/06 11:00:36 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/22 15:05:17 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	pa(t_list **lst_a, t_list **lst_b)
 	tmp->next->prev = last;
 	(*lst_b) = tmp->next;
 	ft_lstadd_front(lst_a, ft_lstnew(tmp->content));
+	ft_printf("pa\n");
 	free(tmp);
 }
 
@@ -44,5 +45,6 @@ void	pb(t_list **lst_a, t_list **lst_b)
 	tmp->prev->next = tmp->next;
 	tmp->next->prev = last;
 	(*lst_a) = tmp->next;
+	ft_printf("pb\n");
 	ft_lstadd_front(lst_b, ft_lstnew(tmp->content));
 }
