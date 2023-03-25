@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/22 12:20:15 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/25 15:55:11 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	pa(t_list **lst_a, t_list **lst_b);
 void	pb(t_list **lst_a, t_list **lst_b);
 
 /* ./chunks/sorting.c */
-void	indexing(t_list *lst_a);
-void	sorting(t_list *lst_a, t_list *lst_b);
+void	indexing(t_list **lst_a);
+void	sorting(t_list **lst_a, t_list **lst_b);
 
 #endif

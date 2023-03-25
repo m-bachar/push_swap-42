@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/03/14 12:55:35 by mbachar          ###   ########.fr        #
+#    Updated: 2023/03/25 20:29:25 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,8 @@ all: $(PUSH_SWAP) #$(CHECKER)
 	@ $(CC) $(CFLAGS) -c $< -o $@
 
 $(PUSH_SWAP): $(MAN_OBJ)
+	@ cd ./libft && make
+	@ cd ./ft_printf && make
 	@ $(CC) $(CFLAGS) $(MAN_OBJ) -o $(PUSH_SWAP) $(PRINTF) $(LIBFT)
 	@ printf "===============================================\n"
 	@ printf "All mandatory source files have been compiled.\n"
@@ -55,12 +57,16 @@ $(PUSH_SWAP): $(MAN_OBJ)
 
 clean:
 	@ rm -fr $(MAN_OBJ)
+	@ cd ./libft && make clean
+	@ cd ./ft_printf && make clean
 	@ printf "===============================================\n"
 	@ printf "All object files have been destroyed.\n"
 	@ printf "===============================================\n"
 
 fclean:
 	@ rm -fr $(PUSH_SWAP) $(MAN_OBJ)
+	@ cd ./libft && make fclean
+	@ cd ./ft_printf && make fclean
 	@ printf "=========================================================\n"
 	@ printf "All object files and executable file have been destroyed.\n"
 	@ printf "==========================================================\n"

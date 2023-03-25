@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:49:13 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/22 15:27:10 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/25 21:06:35 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,13 @@ char	**ft_single_arg(char **str)
 	i = 1;
 	joined = malloc(sizeof(char) * 1);
 	if (!joined)
-		return (free(joined), NULL);
+		return (NULL);
 	while (str[i])
 	{
-		joined = ft_strjoin(joined, " ");
 		joined = ft_strjoin(joined, str[i++]);
+		joined = ft_strjoin(joined, " ");
 	}
 	splitted = ft_split(joined, ' ');
-	i = 0;
 	return (free(joined), splitted);
 }
 

@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/12 09:22:11 by mbachar           #+#    #+#              #
-#    Updated: 2022/11/18 22:33:21 by mbachar          ###   ########.fr        #
+#    Updated: 2023/03/25 20:16:46 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,16 +32,16 @@ CC = cc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $(OBJ)
+	@ ar rc $(NAME) $(OBJ)
 
 %.o : %.c $(INCLUDE)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@ $(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	@ rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf $(NAME)
+	@ rm -rf $(NAME)
 
 re: fclean all
 

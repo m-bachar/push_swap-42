@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/22 08:33:19 by mbachar           #+#    #+#              #
-#    Updated: 2022/11/15 22:29:45 by mbachar          ###   ########.fr        #
+#    Updated: 2023/03/25 20:17:02 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,13 +53,13 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(OBJ) libft.h
-	ar -r $@ $(OBJ)
+	@ ar -r $@ $(OBJ)
 
 clean:
-	rm -f $(OBJ)
+	@ rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	@ rm -f $(NAME)
 
 re: fclean all
 
