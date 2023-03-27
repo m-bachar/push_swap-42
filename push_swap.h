@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/25 15:55:11 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/27 01:20:04 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,14 @@ void	rrr(t_list **lst_a, t_list **lst_b, int status);
 void	pa(t_list **lst_a, t_list **lst_b);
 void	pb(t_list **lst_a, t_list **lst_b);
 
-/* ./chunks/sorting.c */
+/* ./chunks/indexing.c */
 void	indexing(t_list **lst_a);
-void	sorting(t_list **lst_a, t_list **lst_b);
+
+/* ./chunks/push_to_b.c */
+void	push_to_b(t_list **lst_a, t_list **lst_b);
+
+/* ./chunks/push_to_a.c */
+void	push_to_a(t_list **lst_a, t_list **lst_b);
+int		find_max(t_list **lst_b, int half_chunk);
 
 #endif
