@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:11:54 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/28 01:07:11 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/28 01:25:40 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 int find_max(t_list **lst_b, int half_chunk, int index)
 {
-	t_list **tmp;
+	t_list *tmp;
 	int counter;
 
-	tmp = lst_b;
+	tmp = *lst_b;
 	counter = 0;
-	while ((*tmp)->next != (*lst_b))
+	while ((tmp)->next != (*lst_b))
 	{
-		if ((*tmp)->index == index)
+		if ((tmp)->index == index)
 			break;
 		counter++;
-		(*tmp) = (*tmp)->next;
+		(tmp) = (tmp)->next;
 	}
 	if (counter <= half_chunk)
 		return (1);
@@ -42,14 +42,12 @@ void push_to_a(t_list **lst_a, t_list **lst_b)
 	{
 		if (find_max(lst_b, half_chunk, index) == 1)
 		{
-			ft_printf("Upper Chunk = %d\n", (*lst_b)->content);
 			while ((*lst_b)->index != index)
 				rb(lst_b, 1);
 			pa(lst_a, lst_b);
 		}
 		else
 		{
-			ft_printf("Lower Chunk = %d\n", (*lst_b)->content);
 			while ((*lst_b)->index != index)
 				rrb(lst_b, 1);
 			pa(lst_a, lst_b);
