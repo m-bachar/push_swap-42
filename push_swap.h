@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/27 01:20:04 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/28 01:07:17 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ void	push_to_b(t_list **lst_a, t_list **lst_b);
 
 /* ./chunks/push_to_a.c */
 void	push_to_a(t_list **lst_a, t_list **lst_b);
-int		find_max(t_list **lst_b, int half_chunk);
+int		find_max(t_list **lst_b, int half_chunk, int index);
 
 #endif

@@ -6,21 +6,19 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:11:54 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/27 16:39:14 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/28 01:07:11 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int find_max(t_list **lst_b, int half_chunk)
+int find_max(t_list **lst_b, int half_chunk, int index)
 {
 	t_list **tmp;
-	int index;
 	int counter;
 
 	tmp = lst_b;
 	counter = 0;
-	index = ft_lstsize(*lst_b) - 1;
 	while ((*tmp)->next != (*lst_b))
 	{
 		if ((*tmp)->index == index)
@@ -37,35 +35,25 @@ void push_to_a(t_list **lst_a, t_list **lst_b)
 {
 	int half_chunk;
 	int index;
-	int size;
-	int i;
 
 	half_chunk = ft_lstsize(*lst_b) / 2;
 	index = ft_lstsize(*lst_b) - 1;
-	i = 0;
-	size = 0;
-	while (size < ft_lstsize(*lst_b))
+	while (index >= 0)
 	{
-		if (find_max(lst_b, half_chunk) == 1)
+		if (find_max(lst_b, half_chunk, index) == 1)
 		{
-			rrb(lst_b, 1);
-			if ((*lst_b)->index == index)
-			{
-				pa(lst_a, lst_b);
-				index--;
-				break ;
-			}
+			ft_printf("Upper Chunk = %d\n", (*lst_b)->content);
+			while ((*lst_b)->index != index)
+				rb(lst_b, 1);
+			pa(lst_a, lst_b);
 		}
 		else
 		{
-			rb(lst_b, 1);
-			if ((*lst_b)->index == index)
-			{
-				pa(lst_a, lst_b);
-				index--;
-				break ;
-			}
+			ft_printf("Lower Chunk = %d\n", (*lst_b)->content);
+			while ((*lst_b)->index != index)
+				rrb(lst_b, 1);
+			pa(lst_a, lst_b);
 		}
-		size++;
+		index--;
 	}
 }

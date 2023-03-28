@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/27 14:54:28 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/28 00:37:46 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,13 @@ static void	pushing_a_to_b(t_list **lst_a, t_list **lst_b)
 {
 	indexing(lst_a);
 	push_to_b(lst_a, lst_b);
-	return ;
 }
 
 static void	pushing_b_to_a(t_list **lst_a, t_list **lst_b)
 {
 	indexing(lst_b);
 	push_to_a(lst_a, lst_b);
+	indexing(lst_a);
 }
 
 int	main(int argc, char **argv)
@@ -48,6 +48,7 @@ int	main(int argc, char **argv)
 	char		**splitted;
 	int			i;
 	t_list		*lst_a;
+	t_list		*lst_aa;
 	t_list		*lst_b;
 
 	// leaks();
@@ -60,7 +61,15 @@ int	main(int argc, char **argv)
 		ft_handle_errors(splitted);
 		filling_stack_a(&lst_a, splitted);
 		pushing_a_to_b(&lst_a, &lst_b);
-		pushing_b_to_a(&lst_a, &lst_b);
+		pushing_b_to_a(&lst_aa, &lst_b);
+		ft_printf("===========================================\n");
+		while (i++ < ft_lstsize(lst_aa))
+		{
+			ft_printf("Node's Content = %d\tNode's Index = %d\n", lst_aa->content, lst_aa->index);
+			lst_aa = lst_aa->next;
+		}
+		ft_printf("===========================================\n");
+		// ft_printf("Node's Content = %d\t Node's Index = %d\n", lst_aa->content, lst_aa->index);
 		// system("leaks push_swap");
 	}
 	else
