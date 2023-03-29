@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:58:50 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/28 01:35:50 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/29 01:24:19 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ void	push_to_b(t_list **lst_a, t_list **lst_b)
 	i = 0;
 	chunk_start = 0;
 	size = ft_lstsize(*lst_a);
-	if (ft_lstsize(*lst_a) <= 200)
+	if (ft_lstsize(*lst_a) <= 100)
 		chunk_end = ft_lstsize(*lst_a) / 5;
 	else
-		chunk_end = ft_lstsize(*lst_a) / 6;
+		chunk_end = ft_lstsize(*lst_a) / 10;
 	ref = chunk_end;
 	while (size)
 	{

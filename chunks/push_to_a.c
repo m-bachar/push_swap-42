@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:11:54 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/28 01:25:40 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/29 01:24:12 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void push_to_a(t_list **lst_a, t_list **lst_b)
 	int half_chunk;
 	int index;
 
-	half_chunk = ft_lstsize(*lst_b) / 2;
 	index = ft_lstsize(*lst_b) - 1;
 	while (index >= 0)
 	{
+		half_chunk = ft_lstsize(*lst_b) / 2;
 		if (find_max(lst_b, half_chunk, index) == 1)
 		{
 			while ((*lst_b)->index != index)
