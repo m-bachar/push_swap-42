@@ -6,16 +6,11 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/28 01:28:21 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/29 01:27:56 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	leaks(void)
-{
-	system("leaks push_swap");
-}
 
 static void	filling_stack_a(t_list **lst_a, char **splitted)
 {
@@ -51,7 +46,6 @@ int	main(int argc, char **argv)
 	t_list		*lst_aa;
 	t_list		*lst_b;
 
-	// leaks();
 	i = 0;
 	if (argc > 1)
 	{

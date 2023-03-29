@@ -6,23 +6,23 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:11:54 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/29 01:24:12 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/29 01:26:28 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int find_max(t_list **lst_b, int half_chunk, int index)
+int	find_max(t_list **lst_b, int half_chunk, int index)
 {
-	t_list *tmp;
-	int counter;
+	t_list	*tmp;
+	int		counter;
 
 	tmp = *lst_b;
 	counter = 0;
 	while ((tmp)->next != (*lst_b))
 	{
 		if ((tmp)->index == index)
-			break;
+			break ;
 		counter++;
 		(tmp) = (tmp)->next;
 	}
@@ -31,10 +31,10 @@ int find_max(t_list **lst_b, int half_chunk, int index)
 	return (0);
 }
 
-void push_to_a(t_list **lst_a, t_list **lst_b)
+void	push_to_a(t_list **lst_a, t_list **lst_b)
 {
-	int half_chunk;
-	int index;
+	int	half_chunk;
+	int	index;
 
 	index = ft_lstsize(*lst_b) - 1;
 	while (index >= 0)
