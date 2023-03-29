@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/29 01:27:56 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/29 01:45:56 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	pushing_a_to_b(t_list **lst_a, t_list **lst_b)
 {
 	indexing(lst_a);
 	push_to_b(lst_a, lst_b);
+	(*lst_a) = NULL;
 }
 
 static void	pushing_b_to_a(t_list **lst_a, t_list **lst_b)
@@ -43,7 +44,6 @@ int	main(int argc, char **argv)
 	char		**splitted;
 	int			i;
 	t_list		*lst_a;
-	t_list		*lst_aa;
 	t_list		*lst_b;
 
 	i = 0;
@@ -55,7 +55,13 @@ int	main(int argc, char **argv)
 		ft_handle_errors(splitted);
 		filling_stack_a(&lst_a, splitted);
 		pushing_a_to_b(&lst_a, &lst_b);
-		pushing_b_to_a(&lst_aa, &lst_b);
+		pushing_b_to_a(&lst_a, &lst_b);
+		while (i < ft_lstsize(lst_a))
+		{
+			ft_printf("Node's Content = %d\tNode's Index = %d\n", lst_a->content, lst_a->index);
+			lst_a = lst_a->next;
+			i++;
+		}
 		// system("leaks push_swap");
 	}
 	else

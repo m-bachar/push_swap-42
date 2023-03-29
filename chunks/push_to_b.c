@@ -6,29 +6,13 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:58:50 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/29 01:24:19 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/03/29 01:37:38 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* Leaks in push_to_b() */
 
 #include "../push_swap.h"
-
-static void	free_lst(t_list	**lst)
-{
-	int	size;
-
-	size = ft_lstsize(*lst);
-	while (size)
-	{
-		(*lst)->content = 0;
-		(*lst)->index = 0;
-		(*lst)->next = NULL;
-		(*lst)->prev = NULL;
-		size--;
-	}
-	free(*lst);
-}
 
 void	push_to_b(t_list **lst_a, t_list **lst_b)
 {
@@ -72,5 +56,4 @@ void	push_to_b(t_list **lst_a, t_list **lst_b)
 		chunk_start += ref;
 		chunk_end += ref;
 	}
-	free_lst(lst_a);
 }
