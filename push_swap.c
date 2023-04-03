@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 01:32:21 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 01:59:54 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ int	main(int argc, char **argv)
 	t_list		*lst_b;
 	char		**splitted;
 	int			size;
-	int			i;
 
 	if (argc > 1)
 	{
@@ -81,10 +80,7 @@ int	main(int argc, char **argv)
 			else
 				sort_100_and_500(&lst_a, &lst_b);
 		}
-		i = 0;
-		while (1)
-			i++;
+		free(lst_a);
 	}
-	else
-		exit (0);
+	exit (0);
 }

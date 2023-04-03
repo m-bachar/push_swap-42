@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 01:28:53 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 02:00:54 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ typedef struct s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }	t_list;
-			/* Sorting */
+
+			/* Chunks */
 /*	./chunks/sorting.c	*/
 void	sort_2(t_list **lst_a);
 void	sort_3(t_list **lst_a);
