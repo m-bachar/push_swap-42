@@ -4,6 +4,7 @@
         "*.excalidrawlib": "json",
         "push_swap.h": "c",
         "ft_printf.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "chrono": "c"
     }
 }

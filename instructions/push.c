@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 08:42:42 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/25 21:09:47 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 01:19:02 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,5 @@ void	pb(t_list **lst_a, t_list **lst_b)
 	(*lst_a) = tmp->next;
 	ft_printf("pb\n");
 	ft_lstadd_front(lst_b, ft_lstnew(tmp->content));
+	free(tmp);
 }

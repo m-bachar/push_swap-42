@@ -6,13 +6,15 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/29 01:45:56 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 01:32:21 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* Leaks at exit */
+
 #include "push_swap.h"
 
-static void	filling_stack_a(t_list **lst_a, char **splitted)
+void	filling_stack_a(t_list **lst_a, char **splitted)
 {
 	int			size;
 	int			i;
@@ -25,28 +27,43 @@ static void	filling_stack_a(t_list **lst_a, char **splitted)
 		ft_lstadd_back(lst_a, ft_lstnew(ft_atoi(splitted[i++])));
 }
 
-static void	pushing_a_to_b(t_list **lst_a, t_list **lst_b)
+void	pushing_a_to_b(t_list **lst_a, t_list **lst_b)
 {
 	indexing(lst_a);
 	push_to_b(lst_a, lst_b);
 	(*lst_a) = NULL;
 }
 
-static void	pushing_b_to_a(t_list **lst_a, t_list **lst_b)
+void	pushing_b_to_a(t_list **lst_a, t_list **lst_b)
 {
 	indexing(lst_b);
 	push_to_a(lst_a, lst_b);
 	indexing(lst_a);
 }
 
+int	already_sorted(t_list **lst_a)
+{
+	t_list	*tmp;
+
+	tmp = (*lst_a);
+	while (tmp->next != (*lst_a))
+	{
+		if (tmp->content < tmp->next->content)
+			tmp = tmp->next;
+		else
+			return (0);
+	}
+	return (1);
+}
+
 int	main(int argc, char **argv)
 {
-	char		**splitted;
-	int			i;
 	t_list		*lst_a;
 	t_list		*lst_b;
+	char		**splitted;
+	int			size;
+	int			i;
 
-	i = 0;
 	if (argc > 1)
 	{
 		if (!ft_isempty(argv))
@@ -54,15 +71,19 @@ int	main(int argc, char **argv)
 		splitted = ft_single_arg(argv);
 		ft_handle_errors(splitted);
 		filling_stack_a(&lst_a, splitted);
-		pushing_a_to_b(&lst_a, &lst_b);
-		pushing_b_to_a(&lst_a, &lst_b);
-		while (i < ft_lstsize(lst_a))
+		size = ft_lstsize(lst_a);
+		if (!already_sorted(&lst_a))
 		{
-			ft_printf("Node's Content = %d\tNode's Index = %d\n", lst_a->content, lst_a->index);
-			lst_a = lst_a->next;
-			i++;
+			if (size == 3 || size == 2 || size == 4)
+				sort_2_3_4(&lst_a, &lst_b);
+			else if (size == 5)
+				sort_5(&lst_a, &lst_b);
+			else
+				sort_100_and_500(&lst_a, &lst_b);
 		}
-		// system("leaks push_swap");
+		i = 0;
+		while (1)
+			i++;
 	}
 	else
 		exit (0);

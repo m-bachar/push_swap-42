@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 16:06:05 by mbachar           #+#    #+#             */
-/*   Updated: 2023/02/26 16:59:52 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 01:28:43 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,4 @@ void	ft_errors(char *str)
 	reset();
 	ft_printf("%s !\n", str);
 	exit (0);
-}
-
-void	ft_success(char *str)
-{
-	green();
-	ft_printf("Success : ");
-	reset();
-	ft_printf("%s !\n", str);
 }

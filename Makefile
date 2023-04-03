@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/03/27 00:30:54 by mbachar          ###   ########.fr        #
+#    Updated: 2023/04/03 01:12:01 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,9 @@ MAN_SRC 	= 	push_swap.c \
 				instructions/push.c \
 				chunks/push_to_b.c \
 				chunks/push_to_a.c \
-				chunks/indexing.c
+				chunks/indexing.c \
+				chunks/sorting.c \
+				chunks/sorting2.c
 
 MAN_OBJ		=	$(MAN_SRC:.c=.o)
 
