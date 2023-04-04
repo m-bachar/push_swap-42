@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 01:59:54 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 22:42:21 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	pushing_b_to_a(t_list **lst_a, t_list **lst_b)
 	indexing(lst_b);
 	push_to_a(lst_a, lst_b);
 	indexing(lst_a);
+	(*lst_b) = NULL;
 }
 
 int	already_sorted(t_list **lst_a)
@@ -58,8 +59,8 @@ int	already_sorted(t_list **lst_a)
 
 int	main(int argc, char **argv)
 {
-	t_list		*lst_a;
-	t_list		*lst_b;
+	t_list		*lst_a = NULL;
+	t_list		*lst_b = NULL;
 	char		**splitted;
 	int			size;
 
@@ -80,7 +81,6 @@ int	main(int argc, char **argv)
 			else
 				sort_100_and_500(&lst_a, &lst_b);
 		}
-		free(lst_a);
 	}
 	exit (0);
 }

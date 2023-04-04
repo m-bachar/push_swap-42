@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 01:05:48 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 01:24:52 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/03 22:44:47 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,10 @@ void	push_2_to_b(t_list **lst_a, t_list **lst_b)
 
 void	sort_2_3_4(t_list **lst_a, t_list **lst_b)
 {
-	(void)lst_b;
-	sort_2(lst_a);
-	sort_3(lst_a);
-	sort_4(lst_a, lst_b);
+	if (ft_lstsize((*lst_a)) == 2)
+		sort_2(lst_a);
+	else if (ft_lstsize((*lst_a)) == 3)
+		sort_3(lst_a);
+	else if (ft_lstsize((*lst_a)) == 4)
+		sort_4(lst_a, lst_b);
 }
