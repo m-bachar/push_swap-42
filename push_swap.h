@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:40 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 02:00:54 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/08 20:37:38 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 	struct s_list	*prev;
+	int				chunkstart;
+	int				chunkend;
+	int				size;
+	int				ref;
+	int				i;
 }	t_list;
 
 			/* Chunks */
@@ -40,13 +45,16 @@ void	sort_100_and_500(t_list **lst_a, t_list **lst_b);
 int		find_min(t_list **lst_a, int half_chunk, int index);
 void	push_1_to_b(t_list **lst_a, t_list **lst_b);
 void	push_2_to_b(t_list **lst_a, t_list **lst_b);
-void	sort_2_3_4(t_list **lst_a, t_list **lst_b);
+void	sort_2_3_4_5(t_list **lst_a, t_list **lst_b);
 
 /* ./chunks/indexing.c */
 void	indexing(t_list **lst_a);
+void	sa_ra_rra(t_list **lst_a, int status);
 
 /* ./chunks/push_to_b.c */
-void	push_to_b(t_list **lst_a, t_list **lst_b);
+void	push_to_b(t_list **lst_a, t_list **lst_b, t_list *a);
+void	initializing(t_list **lst_a, t_list *a);
+void	increment(t_list *a);
 
 /* ./chunks/push_to_a.c */
 void	push_to_a(t_list **lst_a, t_list **lst_b);

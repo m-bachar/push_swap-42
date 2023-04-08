@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:11:25 by mbachar           #+#    #+#             */
-/*   Updated: 2023/03/26 17:11:52 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/05 21:33:59 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,18 @@ void	indexing(t_list **lst_a)
 		}
 	}
 	(*lst_a) = (*lst_a)->next;
+}
+
+void	sa_ra_rra(t_list **lst_a, int status)
+{
+	if (status == 0)
+	{
+		sa((*lst_a), 1);
+		ra(lst_a, 1);
+	}
+	else if (status == 1)
+	{
+		sa((*lst_a), 1);
+		rra(lst_a, 1);
+	}
 }

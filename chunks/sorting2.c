@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 01:05:48 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 22:44:47 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/05 20:10:38 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	push_2_to_b(t_list **lst_a, t_list **lst_b)
 	}
 }
 
-void	sort_2_3_4(t_list **lst_a, t_list **lst_b)
+void	sort_2_3_4_5(t_list **lst_a, t_list **lst_b)
 {
 	if (ft_lstsize((*lst_a)) == 2)
 		sort_2(lst_a);
@@ -87,4 +87,6 @@ void	sort_2_3_4(t_list **lst_a, t_list **lst_b)
 		sort_3(lst_a);
 	else if (ft_lstsize((*lst_a)) == 4)
 		sort_4(lst_a, lst_b);
+	else if (ft_lstsize((*lst_a)) == 5)
+		sort_5(lst_a, lst_b);
 }

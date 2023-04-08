@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 14:26:22 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 22:42:21 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/08 20:35:45 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@ void	filling_stack_a(t_list **lst_a, char **splitted)
 
 void	pushing_a_to_b(t_list **lst_a, t_list **lst_b)
 {
+	t_list	a;
+
+	initializing(lst_a, &a);
 	indexing(lst_a);
-	push_to_b(lst_a, lst_b);
+	push_to_b(lst_a, lst_b, &a);
 	(*lst_a) = NULL;
 }
 
@@ -59,11 +62,13 @@ int	already_sorted(t_list **lst_a)
 
 int	main(int argc, char **argv)
 {
-	t_list		*lst_a = NULL;
-	t_list		*lst_b = NULL;
+	t_list		*lst_a;
+	t_list		*lst_b;
 	char		**splitted;
 	int			size;
 
+	lst_a = NULL;
+	lst_b = NULL;
 	if (argc > 1)
 	{
 		if (!ft_isempty(argv))
@@ -74,10 +79,8 @@ int	main(int argc, char **argv)
 		size = ft_lstsize(lst_a);
 		if (!already_sorted(&lst_a))
 		{
-			if (size == 3 || size == 2 || size == 4)
-				sort_2_3_4(&lst_a, &lst_b);
-			else if (size == 5)
-				sort_5(&lst_a, &lst_b);
+			if (size == 3 || size == 2 || size == 4 || size == 5)
+				sort_2_3_4_5(&lst_a, &lst_b);
 			else
 				sort_100_and_500(&lst_a, &lst_b);
 		}

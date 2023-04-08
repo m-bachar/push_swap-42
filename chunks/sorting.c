@@ -6,7 +6,7 @@
 /*   By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:33:59 by mbachar           #+#    #+#             */
-/*   Updated: 2023/04/03 01:26:29 by mbachar          ###   ########.fr       */
+/*   Updated: 2023/04/05 21:33:22 by mbachar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,29 +23,24 @@ void	sort_2(t_list **lst_a)
 
 void	sort_3(t_list **lst_a)
 {
-	t_list	*tmp;
-
-	tmp = (*lst_a);
-	if (tmp->content > tmp->next->content)
+	if ((*lst_a)->content > (*lst_a)->next->content)
 	{
-		if (tmp->next->content < tmp->next->next->content && tmp->content < tmp->next->next->content)
+		if ((*lst_a)->next->content < (*lst_a)->next->next->content
+			&& (*lst_a)->content < (*lst_a)->next->next->content)
 			sa((*lst_a), 1);
-		else if (tmp->next->content > tmp->next->next->content)
-		{
-			sa((*lst_a), 1);
-			rra(lst_a, 1);
-		}
-		else if (tmp->next->content < tmp->next->next->content && tmp->content > tmp->next->next->content)
+		else if ((*lst_a)->next->content > (*lst_a)->next->next->content)
+			sa_ra_rra(lst_a, 1);
+		else if ((*lst_a)->next->content < (*lst_a)->next->next->content
+			&& (*lst_a)->content > (*lst_a)->next->next->content)
 			ra(lst_a, 1);
 	}
-	else if (tmp->content < tmp->next->content)
+	else if ((*lst_a)->content < (*lst_a)->next->content)
 	{
-		if (tmp->next->content > tmp->next->next->content && tmp->content < tmp->next->next->content)
-		{
-			sa((*lst_a), 1);
-			ra(lst_a, 1);
-		}
-		else if (tmp->next->content > tmp->next->next->content && tmp->content > tmp->next->next->content)
+		if ((*lst_a)->next->content > (*lst_a)->next->next->content
+			&& (*lst_a)->content < (*lst_a)->next->next->content)
+			sa_ra_rra(lst_a, 0);
+		else if ((*lst_a)->next->content > (*lst_a)->next->next->content
+			&& (*lst_a)->content > (*lst_a)->next->next->content)
 			rra(lst_a, 1);
 	}
 }
