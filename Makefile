@@ -6,7 +6,7 @@
 #    By: mbachar <mbachar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 14:36:47 by mbachar           #+#    #+#              #
-#    Updated: 2023/04/08 20:26:53 by mbachar          ###   ########.fr        #
+#    Updated: 2023/04/08 21:10:47 by mbachar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,11 +41,7 @@ MAN_SRC 	= 	push_swap.c \
 
 MAN_OBJ		=	$(MAN_SRC:.c=.o)
 
-#CHECKER	= 	checker
-
-#BON_SRC 	= 	checker.c
-
-all: $(PUSH_SWAP) #$(CHECKER)
+all: $(PUSH_SWAP)
 
 %.o : %.c $(INC)
 	@ $(CC) $(CFLAGS) -c $< -o $@
